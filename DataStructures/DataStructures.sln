@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DataStructures", "DataStruc
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinkList", "LinkList\LinkList.vcxproj", "{349DF5E5-5200-4E84-AFF9-E24FCF7178EB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tree", "Tree\Tree.vcxproj", "{012293B9-36C2-4B3E-A1D8-BD353E79EFE7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{349DF5E5-5200-4E84-AFF9-E24FCF7178EB}.Release|x64.Build.0 = Release|x64
 		{349DF5E5-5200-4E84-AFF9-E24FCF7178EB}.Release|x86.ActiveCfg = Release|Win32
 		{349DF5E5-5200-4E84-AFF9-E24FCF7178EB}.Release|x86.Build.0 = Release|Win32
+		{012293B9-36C2-4B3E-A1D8-BD353E79EFE7}.Debug|x64.ActiveCfg = Debug|x64
+		{012293B9-36C2-4B3E-A1D8-BD353E79EFE7}.Debug|x64.Build.0 = Debug|x64
+		{012293B9-36C2-4B3E-A1D8-BD353E79EFE7}.Debug|x86.ActiveCfg = Debug|Win32
+		{012293B9-36C2-4B3E-A1D8-BD353E79EFE7}.Debug|x86.Build.0 = Debug|Win32
+		{012293B9-36C2-4B3E-A1D8-BD353E79EFE7}.Release|x64.ActiveCfg = Release|x64
+		{012293B9-36C2-4B3E-A1D8-BD353E79EFE7}.Release|x64.Build.0 = Release|x64
+		{012293B9-36C2-4B3E-A1D8-BD353E79EFE7}.Release|x86.ActiveCfg = Release|Win32
+		{012293B9-36C2-4B3E-A1D8-BD353E79EFE7}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
