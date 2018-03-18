@@ -15,16 +15,19 @@ struct node
     int data;
     node* left;
     node* right;
+
+    node(int x) {
+        data = x;
+        left = right = NULL;
+    }
 };
 
 
 class BST
 {
+protected:
     node* root;
     LOGGING logger;
-
-private:
-    node* newNode(int x);
 
 public:
 
@@ -36,19 +39,33 @@ public:
     void remove(int x);
     void deleteTree(node* t);
     
-    // TRAVERSAL
-    void inorder();
-    
     // UTILITY
-    node* find(int x);
-    
+    node* search(int x);
+
+    // DEBUG
     static void test();
 
     private:
-    node* insert(int x, node* t);
-    node* remove(int x, node* t);
-    void inorder(node* t);
-    node* find(node* t, int x);
+    node* insert(node* t, int x);
+    node* remove(node* t, int x);
+    node* search(node* t, int x);
     node* findMin(node* t);
     node* findMax(node* t);
+};
+
+class DisplayTree : public BST
+{
+    
+    public:
+    void preorder();
+    void inorder();
+    void postorder();
+    void levelorder();  //Print nodes level by level
+    void rightview();
+
+    private:
+    void preorder(node *t);
+    void inorder(node* t);
+    void postorder(node* t);
+    void rightview(node *t, int nodelevel, int* currentlevel);
 };

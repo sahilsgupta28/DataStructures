@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{349DF5E5-5200-4E84-AFF9-E24FCF7178EB}</ProjectGuid>
-    <RootNamespace>LinkList</RootNamespace>
+    <ProjectGuid>{6A269DED-1CCC-4D9C-9CC1-8D0F763736DC}</ProjectGuid>
+    <RootNamespace>Stack</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -114,10 +114,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="LinkList.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MinStack.cpp" />
+    <ClCompile Include="MultiStack.cpp" />
+    <ClCompile Include="stack.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="LinkList.h" />
+    <ClInclude Include="MinStack.h" />
+    <ClInclude Include="MultiStack.h" />
+    <ClInclude Include="stack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

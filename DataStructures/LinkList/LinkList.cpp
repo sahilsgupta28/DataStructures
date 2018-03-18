@@ -33,9 +33,31 @@ void LinkList::insert(Node *node)
     }
 }
 
-void LinkList::deleteNode(int x)
+bool LinkList::deleteNode(int x)
 {
+    Node *cur = head;
 
+    if(!head) return false;
+
+    if(head->data == x) {
+        head = head->next;
+        delete cur;
+    }
+
+    Node *pre = head;
+    cur = cur->next;
+
+    while (cur) {
+        if (cur->data == x) {
+            pre->next = cur->next;
+            delete cur;
+            return true;
+        }
+        cur = cur->next;
+        pre = pre->next;
+    }
+
+    return false;
 }
 
 void LinkList::clear()
@@ -43,7 +65,7 @@ void LinkList::clear()
     Node *cur;
     while(head) {
         cur = head;
-        head=head->next;
+        head = head->next;
         delete cur;
     }
 }
@@ -66,6 +88,46 @@ void LinkList::display()
 		tmp = tmp->next;
 	}
     cout << tmp->data << endl;
+}
+
+void LinkList::reverse()
+{
+    if(!head || !head->next)
+        return;
+
+    Node *cur = head->next, *next;
+    head->next = nullptr;
+
+    while (cur) {
+        next = cur->next;
+        cur->next = head;
+        head = cur;
+        cur = next;
+    }
+}
+
+//1->2->3->4 (2)
+//3->4->1->2
+//Better : Convert to CLL and rotate, then unlink.
+void LinkList::rotate_right(int x)
+{
+    Node *cur = head, *before_head = head;
+    
+    for (int i = 0; i < x; ++i) {
+        if(cur->next)
+            cur = cur->next;
+    }
+    //fix if x >= length
+
+    while (cur->next) {
+        cur=cur->next;
+        before_head = before_head->next;
+    }
+
+    cur->next = head;
+    cur = before_head->next;
+    before_head->next = nullptr;
+    head = cur;
 }
 
 void LinkList::remove_duplicates()
@@ -267,6 +329,7 @@ Node* LinkList::IfIntersect(LinkList* b)
     if(!acur || !bcur) 
         return nullptr;
 
+    /* Length of List A and B, also cur points to last node */
     while(acur->next) {
         acur = acur->next;
         alen++;
@@ -279,6 +342,7 @@ Node* LinkList::IfIntersect(LinkList* b)
     if(acur != bcur) //ends should be same if list intersect
         return nullptr; 
 
+    // Increment nodes of longer list, so that both list have same length
     if (alen > blen) {
         acur = a->nthLast(blen);
         bcur = b->head;
@@ -288,6 +352,7 @@ Node* LinkList::IfIntersect(LinkList* b)
         acur = a->head;
     }
 
+    //compare till we find common node
     while (acur != bcur) {
         acur = acur->next;
         bcur = bcur->next;
@@ -338,6 +403,15 @@ void main()
     l.insert(45); l.insert(35); l.insert(25); l.insert(15); l.insert(5); l.insert(2);
 	l.insert(2); l.insert(5); l.insert(15); l.insert(25); l.insert(25); 
     l.insert(35); l.insert(45);
+    l.display();
+
+    l.reverse();
+    l.display();
+
+    l.rotate_right(4);
+    l.display();
+
+    l.rotate_right(2);
     l.display();
 
     //1-------------------------------------------------------------------

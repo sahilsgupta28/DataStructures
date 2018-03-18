@@ -36,11 +36,17 @@ class LinkList
     ~LinkList() { clear(); }
     void insert(int x);
     void insert(Node* node);
-    void deleteNode(int x);
+    bool deleteNode(int x);
     void clear();
     void display();
     int length();
     
+    //Extended
+    void reverse();
+    void rotate_right(int x);
+
+    //Advanced
+
     /** Remove Duplicates
      *  Use set to identify duplicates - Needs Buffer, O(N)
      *  Use runner to compare next elements - No extra space, O(N^2)
